@@ -22,7 +22,7 @@ const Navbar = () => {
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         <a href="#" className="logo">
-          <span>D</span>harmendra <span>D</span>hruw
+          <span>T</span>oshan <span>K</span>anwar
         </a>
         
         <div className="mobile-menu-btn" onClick={toggleMenu}>

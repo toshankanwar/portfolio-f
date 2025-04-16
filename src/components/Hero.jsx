@@ -15,11 +15,9 @@ const Hero = () => {
                             sequence={[
                                 'Full Stack Developer',
                                 1000,
-                                'IoT Specialist',
+                                'ML Engineer',
                                 1000,
-                                'Electronics Engineer',
-                                1000,
-                                'Problem Solver',
+                                'Data Science Enthusiasm',
                                 1000,
                             ]}
                             wrapper="span"
@@ -51,7 +49,7 @@ const Hero = () => {
 
                 <div className="hero-image">
                     <div className="image-container">
-                        <img src="/profile.jpg" alt={personalInfo.name} />
+                        <img src="/profile2.jpg" alt={personalInfo.name} />
                     </div>
                 </div>
             </div>
@@ -141,7 +139,7 @@ const Hero = () => {
         .image-container img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit:cover;
         }
         
         @media screen and (max-width: 992px) {

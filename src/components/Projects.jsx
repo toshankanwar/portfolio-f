@@ -23,16 +23,16 @@ const Projects = () => {
             All
           </button>
           <button 
-            className={`filter-btn ${filter === 'software' ? 'active' : ''}`}
-            onClick={() => setFilter('software')}
+            className={`filter-btn ${filter === 'development' ? 'active' : ''}`}
+            onClick={() => setFilter('development')}
           >
-            Software
+            Development
           </button>
           <button 
-            className={`filter-btn ${filter === 'hardware' ? 'active' : ''}`}
-            onClick={() => setFilter('hardware')}
+            className={`filter-btn ${filter === 'ml' ? 'active' : ''}`}
+            onClick={() => setFilter('ml')}
           >
-            Hardware
+            ML
           </button>
         </div>
         

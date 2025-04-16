@@ -11,11 +11,11 @@ const About = () => {
 
                 <div className="about-content">
                     <div className="about-text">
-                        <p>Hello! I'm Dharmendra Dhruw, an Electronics and Communication Engineering student at IIIT Naya Raipur with a strong passion for Full Stack Web Development and problem-solving through Data Structures and Algorithms.</p>
+                        <p>Hello! I'm Toshan Kanwar, an Data Science and Artificial Intelligence student at IIIT Naya Raipur with a strong passion for Full Stack Web Development and Machine Learning.</p>
 
-                        <p>I specialize in building responsive and dynamic web applications that deliver real-world impact. My journey in tech started with a fascination for how systems work, which has grown into a deep interest in software engineering and full stack development.</p>
+                        <p>I specialize in building responsive and dynamic web applications that deliver real-world impact. My journey in tech started with a fascination for how systems work, which has grown into a deep interest in software engineering, machine learning and full stack development.</p>
 
-                        <p>Beyond development, I actively engage in competitive programming to enhance my algorithmic thinking and coding skills. I'm always eager to explore new technologies and push my limits as a developer and problem solver.</p>
+                        <p>Beyond development, I actively engage in machine learning and other research works. I'm always eager to explore new technologies and push my limits as a developer and problem solver.</p>
 
                         <div className="about-details">
                             <div className="detail">
@@ -35,11 +35,11 @@ const About = () => {
 
                             <div className="detail">
                                 <span className="label"><i className="fas fa-graduation-cap"></i> Education:</span>
-                                <span className="value">B.Tech in Electronics and Communication Engineering</span>
+                                <span className="value">B.Tech in Data Science and Artificial Intelligence</span>
                             </div>
                         </div>
 
-                        <a href="/resume.pdf" className="btn" download>
+                        <a href="https://drive.google.com/file/d/127wHeawpTXMbaesDm6zOC0WMwgHg-opA/view?usp=sharing" className="btn" download>
                             <i className="fas fa-download"></i> Download Resume
                         </a>
                     </div>
@@ -51,7 +51,7 @@ const About = () => {
                         </div>
 
                         <div className="stat-item">
-                            <div className="stat-count">350+</div>
+                            <div className="stat-count">100+</div>
                             <div className="stat-title">DSA Problems Solved</div>
                         </div>
 

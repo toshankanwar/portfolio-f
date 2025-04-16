@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-logo">
-            <h3><span>D</span>harmendra<span> D</span>hruw</h3> 
+            <h3><span>T</span>oshan<span> K</span>anwar</h3> 
             <p>{personalInfo.title}</p>
           </div>
           
