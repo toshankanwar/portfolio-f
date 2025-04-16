@@ -83,8 +83,8 @@ export const personalInfo = {
       description: "Personal Portfolio website to showcasing skills and projects",
       image: "portfolio.png",
       technologies: ["React", "Vite", "JavaScript"],
-      github: "https://dharmendra23101.github.io/sudoku/",
-      demo: "https://dharmendra23101.github.io/sudoku/"
+      github: "https://github.com/toshankanwar/portfolio-f",
+      demo: "https://toshankanwar.website/"
     },
     {
         title: "Credit card fraud detection",
