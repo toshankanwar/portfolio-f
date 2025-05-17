@@ -40,7 +40,7 @@ const Projects = () => {
           {filteredProjects.map((project, index) => (
             <div key={index} className="project-card">
               <div className="project-img">
-                <img src={`/src/assets/images/${project.image}`} alt={project.title} />
+                <img src={`/${project.image}`} alt={project.title} />
                 <div className="overlay">
                   <div className="project-links">
                     <a href={project.github} target="_blank" rel="noopener noreferrer" title="GitHub">

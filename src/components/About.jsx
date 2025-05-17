@@ -39,9 +39,10 @@ const About = () => {
                             </div>
                         </div>
 
-                        <a href="https://drive.google.com/file/d/127wHeawpTXMbaesDm6zOC0WMwgHg-opA/view?usp=sharing" className="btn" download>
-                            <i className="fas fa-download"></i> Download Resume
-                        </a>
+                        <a href="/Toshan_s_Resume.pdf" className="btn" target="_blank" rel="noopener noreferrer">
+                        <i className="fas fa-eye"></i> View Resume
+                      </a>
+
                     </div>
 
                     <div className="about-stats">
