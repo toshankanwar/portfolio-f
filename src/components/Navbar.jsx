@@ -125,7 +125,7 @@ const Navbar = () => {
             position: fixed;
             top: 0;
             right: -100%;
-            width: 70%;
+            width: 100%;
             height: 100vh;
             background-color: white;
             padding: 5rem 2rem 2rem;
