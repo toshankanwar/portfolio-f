@@ -117,6 +117,7 @@ const Navbar = () => {
 
         @media screen and (max-width: 768px) {
           .mobile-menu-icon {
+            padding-right:40px;
             display: block;
             z-index: 1100;
           }
