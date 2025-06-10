@@ -125,21 +125,24 @@ const Navbar = () => {
           .nav-menu {
             position: fixed;
             top: 0;
-            right: -100%;
-            width: 100%;
+            left: 0;
+            width: 100vw;
             height: 100vh;
             background-color: white;
             padding: 5rem 2rem 2rem;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
             box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            transform: translateX(100%);
+            overflow-y: auto;
           }
 
           .nav-menu.active {
-            right: 0;
+            transform: translateX(0);
           }
 
           .nav-menu ul {
             flex-direction: column;
+            align-items:center;
             gap: 1.5rem;
           }
 
@@ -147,11 +150,16 @@ const Navbar = () => {
             display: block;
             position: absolute;
             top: 1.5rem;
-            right: 1.5rem;
+            right: 3.5rem;
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--dark);
           }
+        }
+      `}</style>
+      <style global jsx>{`
+        body {
+          overflow-x: hidden;
         }
       `}</style>
     </header>
