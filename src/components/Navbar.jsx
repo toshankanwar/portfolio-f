@@ -139,7 +139,7 @@ const Navbar = () => {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%; /* changed from 100vw to 100% */
+            width: 100vw; /* changed from 100vw to 100% */
             height: 100vh;
             background-color: white;
             padding: 5rem 2rem 2rem;
