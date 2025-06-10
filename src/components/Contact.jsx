@@ -118,7 +118,7 @@ const Contact = () => {
           </div>
 
           <div className="contact-form">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} autoComplete="off">
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input
@@ -181,9 +181,17 @@ const Contact = () => {
         </div>
       </div>
 
+      {/* Styles with fixes for overflow and mobile responsiveness */}
       <style jsx>{`
         .contact {
           background-color: #f9fafb;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding-left: 1rem;
+          padding-right: 1rem;
         }
 
         .contact-content {
@@ -206,6 +214,7 @@ const Contact = () => {
           padding: 1.5rem;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
           transition: all 0.3s ease;
+          min-width: 0;
         }
 
         .info-item:hover {
@@ -223,6 +232,7 @@ const Contact = () => {
           background-color: var(--primary);
           color: white;
           font-size: 1.2rem;
+          min-width: 50px;
         }
 
         .details h3 {
@@ -232,6 +242,8 @@ const Contact = () => {
 
         .details p {
           color: var(--gray);
+          word-break: break-word;
+          overflow-wrap: break-word;
         }
 
         .contact-form {
@@ -260,6 +272,7 @@ const Contact = () => {
           border-radius: 4px;
           font-family: var(--font-sans);
           transition: all 0.3s ease;
+          box-sizing: border-box;
         }
 
         .form-group input:focus,
@@ -273,6 +286,8 @@ const Contact = () => {
           margin-top: 1rem;
           padding: 0.8rem;
           border-radius: 4px;
+          word-break: break-word;
+          overflow-wrap: break-word;
         }
 
         .form-message.success {
@@ -290,6 +305,7 @@ const Contact = () => {
         @media screen and (max-width: 992px) {
           .contact-content {
             grid-template-columns: 1fr;
+            gap: 2rem;
           }
 
           .contact-info {
@@ -300,6 +316,29 @@ const Contact = () => {
             order: 1;
             margin-bottom: 2rem;
           }
+        }
+        @media screen and (max-width: 600px) {
+          .container {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+          }
+          .contact-form {
+            padding: 1rem;
+          }
+          .info-item {
+            padding: 1rem;
+          }
+        }
+      `}</style>
+      <style global jsx>{`
+        html {
+          box-sizing: border-box;
+        }
+        *, *:before, *:after {
+          box-sizing: inherit;
+        }
+        body {
+          overflow-x: hidden;
         }
       `}</style>
     </section>
