@@ -14,6 +14,19 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    // Cleanup
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -126,7 +139,7 @@ const Navbar = () => {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
+            width: 100%; /* changed from 100vw to 100% */
             height: 100vh;
             background-color: white;
             padding: 5rem 2rem 2rem;
@@ -134,6 +147,7 @@ const Navbar = () => {
             box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
             transform: translateX(100%);
             overflow-y: auto;
+            overscroll-behavior: contain;
           }
 
           .nav-menu.active {
@@ -155,11 +169,6 @@ const Navbar = () => {
             cursor: pointer;
             color: var(--dark);
           }
-        }
-      `}</style>
-      <style global jsx>{`
-        body {
-          overflow-x: hidden;
         }
       `}</style>
     </header>
