@@ -104,7 +104,7 @@ export const projects = [
     image: "bakery-dashboard.png",
     technologies: ["Next.js", "Google Firebase", "Tailwind CSS", "Git"],
     github: "https://github.com/toshankanwar/Admin-Bakery-Management-and--Ecommerce",
-    demo: "https://admin.bakery.toshankanwar.website/",
+    demo: "https://admin.bakery.toshankanwar.website/login",
   },
   {
     title: "Heart Failure Prediction",
