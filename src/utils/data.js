@@ -87,14 +87,24 @@ export const projects = [
     demo: "https://poems.toshankanwar.website",
   },
   {
-    title: "Bakery Ecommerce website",
+    title: "Bakery Ecommerce and Management",
     category: "development",
     description:
-      "Currently in Development phase/updated mode .",
-    image: "bakery.jpg",
-    technologies: ["React.js", "Node.js", "CSS3", "HTML", "Git", "Google Firebase"],
-    github: "https://github.com/toshankanwar/Bakery-Management-System",
+      "A fully resonsive and working bakery website with all functionalities and an app like feeling for mobile version .",
+    image: "bakery.png",
+    technologies: ["Next.js", "Google Firebase", "Tailwind CSS", "Git" ],
+    github: "https://github.com/toshankanwar/bakery-management-and-ecommerce",
     demo: "https://bakery.toshankanwar.website/",
+  },
+  {
+    title: "Bakery Admin Dashboard",
+    category: "development",
+    description:
+      "Admin dashboard to manage orders add products track stocks and everything with fully working state .",
+    image: "bakery-dashboard.png",
+    technologies: ["Next.js", "Google Firebase", "Tailwind CSS", "Git"],
+    github: "https://github.com/toshankanwar/Admin-Bakery-Management-and--Ecommerce",
+    demo: "https://admin.bakery.toshankanwar.website/",
   },
   {
     title: "Heart Failure Prediction",
