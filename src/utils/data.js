@@ -80,12 +80,23 @@ export const projects = [
     title: "PoemSite",
     category: "development",
     description:
-      "Developed a fully responsive poem-sharing platform using Next.js 13+ App Router architecture and Firebase backend. .",
+      "Developed a fully responsive poem-sharing platform using Next.js 13+ App Router architecture and Firebase backend. ",
     image: "poemsite.png",
-    technologies: ["Next.js"," Google Firebase", "Tailwind CSS", "Vercel", "Git", ],
+    technologies: ["Next.js","Node.js","Nodemailer"," Google Firebase", "Tailwind CSS", "Vercel", "Git", ],
     github: "https://github.com/toshankanwar/poetry-website",
     demo: "https://poems.toshankanwar.website",
   },
+  {
+    title: "PoemSite Admin Dashboard",
+    category: "development",
+    description:
+      "Powerfull admin dashboard to add delete update poems ,see and reply to comments ,process request from other poets ",
+    image: "poemsite-admin.png",
+    technologies: ["Next.js","Node.js","Nodemailer"," Google Firebase", "Tailwind CSS", "Vercel", "Git", ],
+    github: "https://github.com/toshankanwar/admin-poetry-website",
+    demo: "https://admin.poems.toshankanwar.website",
+  },
+
   {
     title: "Bakery Ecommerce and Management",
     category: "development",
