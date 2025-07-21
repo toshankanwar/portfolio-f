@@ -11,12 +11,15 @@ const About = () => {
 
                 <div className="about-content">
                     <div className="about-text">
-                        <p>Hello! I'm Toshan Kanwar, an Data Science and Artificial Intelligence student at IIIT Naya Raipur with a strong passion for Full Stack Web Development and Machine Learning.</p>
+                    <p>Hello! I'm Toshan Kanwar, a Data Science and Artificial Intelligence student at IIIT Naya Raipur with a strong passion for Full Stack Web Development and Machine Learning.</p>
 
-                        <p>I specialize in building responsive and dynamic web applications that deliver real-world impact. My journey in tech started with a fascination for how systems work, which has grown into a deep interest in software engineering, machine learning and full stack development.</p>
+<p>I specialize in building responsive and dynamic web applications that deliver real-world impact. My journey in tech started with a fascination for how systems work, which has grown into a deep interest in software engineering, machine learning, and full stack development.</p>
 
-                        <p>Beyond development, I actively engage in machine learning and other research works. I'm always eager to explore new technologies and push my limits as a developer and problem solver.</p>
+<p>Beyond development, I actively engage in machine learning and other research works. I'm always eager to explore new technologies and push my limits as a developer and problem solver.</p>
 
+<p>I'm also a passionate <strong>YouTube content creator</strong>. Over the past year, I have built and grown song mashup YouTube channels where I create songs and personal vlogs. My first channel, <a href="https://www.youtube.com/@Toshan2005/videos" target="_blank">@Toshan2005</a>, reached monetization and generated ₹8,500 through AdSense. Sadly, it was compromised due to a LinkedIn-related security breach. Undeterred, I launched a new channel, <a href="https://www.youtube.com/@ToshanKanwarOfficials" target="_blank">@ToshanKanwarOfficials</a>, where I continue to produce mashups and my personal vlogs.</p>
+
+<p>This<strong> YouTube</strong> journey has significantly enhanced my skills in video editing, content scripting, on-camera communication and also give some fun to enjoy life.</p>
                         <div className="about-details">
                             <div className="detail">
                                 <span className="label"><i className="fas fa-envelope"></i> Email:</span>

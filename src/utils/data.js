@@ -32,10 +32,7 @@ export const socialLinks = [
 ];
 
 export const skills = [
-  {
-    category: "Programming Languages",
-    items: ["C/C++ (for CP)", "Python (for ML)", "JavaScript"],
-  },
+  
   {
     category: "Web Development",
     items: [
@@ -56,19 +53,36 @@ export const skills = [
   {
     category: "Technical Skills",
     items: [
-      "DSA/CP",
-      "Data Science",
-      "Machine Learning",
       "Full Stack Development",
+      "DBMS",
+      "Data Analysis",
+      "Data Science",
+      "Machine Learning"
+      
+    ],
+  },
+  {
+    category: "Programming Languages",
+    items: ["C/C++ (for CP)", "Python (for ML)", "JavaScript"],
+  },
+  {
+    category: "Editing Skills",
+    items: [
+      "Photoshop 7.0",
+      " Adobe Lightroom",
+      "Capcut",
+      "PicsArt",
+      "Virtual DJ"
+      
     ],
   },
   {
     category: "Hardware and Software Tools",
     items: [
       "Git",
+      "Github",
       "VS Code",
       "Jupyter Notebook",
-      "Github",
       "Arduino",
       "Raspberry Pi",
     ],
@@ -77,12 +91,32 @@ export const skills = [
 
 export const projects = [
   {
+    title: "Bakery Ecommerce and Management",
+    category: "development",
+    description:
+      "Built a full-stack, mobile-first bakery e-commerce website with a seamless app-like experience, enabling customers to browse products, add to cart, checkout, and track orders.",
+    image: "bakery.png",
+    technologies: ["Next.js", "Google Firebase", "Tailwind CSS", "DBMS", "Data Analysis", "UI/UX" ],
+    github: "https://github.com/toshankanwar/bakery-management-and-ecommerce",
+    demo: "https://bakery.toshankanwar.website/",
+  },
+  {
+    title: "Bakery Admin Dashboard",
+    category: "development",
+    description:
+      "Developed a robust admin dashboard with advanced role-based access control for secure management of products, orders, and users.",
+    image: "bakery-dashboard.png",
+    technologies: ["Next.js", "Google Firebase", "Tailwind CSS", "Data Analysis"],
+    github: "https://github.com/toshankanwar/Admin-Bakery-Management-and--Ecommerce",
+    demo: "https://admin.bakery.toshankanwar.website/login",
+  },
+  {
     title: "PoemSite",
     category: "development",
     description:
       "Developed a fully responsive poem-sharing platform using Next.js 13+ App Router architecture and Firebase backend. ",
     image: "poemsite.png",
-    technologies: ["Next.js","Node.js","Nodemailer"," Google Firebase", "Tailwind CSS", "Vercel", "Git", ],
+    technologies: ["Next.js","Node.js","Nodemailer"," Google Firebase", "Tailwind CSS", "Zoho mail service" ],
     github: "https://github.com/toshankanwar/poetry-website",
     demo: "https://poems.toshankanwar.website",
   },
@@ -92,31 +126,12 @@ export const projects = [
     description:
       "Powerfull admin dashboard to add delete update poems ,see and reply to comments ,process request from other poets ",
     image: "poemsite-admin.png",
-    technologies: ["Next.js","Node.js","Nodemailer"," Google Firebase", "Tailwind CSS", "Vercel", "Git", ],
+    technologies: ["Next.js","Node.js","Nodemailer"," Google Firebase", "Tailwind CSS" ],
     github: "https://github.com/toshankanwar/admin-poetry-website",
     demo: "https://admin.poems.toshankanwar.website",
   },
 
-  {
-    title: "Bakery Ecommerce and Management",
-    category: "development",
-    description:
-      "A fully resonsive and working bakery website with all functionalities and an app like feeling for mobile version .",
-    image: "bakery.png",
-    technologies: ["Next.js", "Google Firebase", "Tailwind CSS", "Git" ],
-    github: "https://github.com/toshankanwar/bakery-management-and-ecommerce",
-    demo: "https://bakery.toshankanwar.website/",
-  },
-  {
-    title: "Bakery Admin Dashboard",
-    category: "development",
-    description:
-      "Admin dashboard to manage orders add products track stocks and everything with fully working state .",
-    image: "bakery-dashboard.png",
-    technologies: ["Next.js", "Google Firebase", "Tailwind CSS", "Git"],
-    github: "https://github.com/toshankanwar/Admin-Bakery-Management-and--Ecommerce",
-    demo: "https://admin.bakery.toshankanwar.website/login",
-  },
+  
   {
     title: "Heart Failure Prediction",
     category: "ml",
