@@ -11,7 +11,7 @@ export const personalInfo = {
 export const socialLinks = [
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/toshankanwar2005",
+    url: "https://www.linkedin.com/in/toshan-kanwar-4683a1349/",
     icon: "fab fa-linkedin",
   },
   {
@@ -143,6 +143,24 @@ export const projects = [
     demo: "https://heart-failure.toshankanwar.website",
   },
   {
+    title: "Text Analyzer Tool",
+    category: "development",
+    description: "A web app to analyze, transform, and translate text instantly—featuring document upload, keyword highlighting, English/Hindi translation, and speech synthesis.",
+    image: "text.png",
+    technologies: ["React.js", "Vite.js", "pdfjs-dist","mammoth"],
+    github: "https://github.com/toshankanwar/Advance-Text-Analyzer",
+    demo: "https://text-analyzer.toshankanwar.website/",
+  },
+  {
+    title: "Personal Portfolio",
+    category: "development",
+    description: "Personal Portfolio website to showcasing skills and projects",
+    image: "portfolio.png",
+    technologies: ["React.js", "Vite.js", "JavaScript"],
+    github: "https://github.com/toshankanwar/portfolio-f",
+    demo: "https://toshankanwar.website/",
+  },
+  {
     title: "Crypto Predict",
     category: "ml",
     description:
@@ -161,15 +179,7 @@ export const projects = [
     github: "https://github.com/toshankanwar/AQI-Prediction",
     demo: "https://aqi.toshankanwar.website/",
   },
-  {
-    title: "Personal Portfolio",
-    category: "development",
-    description: "Personal Portfolio website to showcasing skills and projects",
-    image: "portfolio.png",
-    technologies: ["React.js", "Vite.js", "JavaScript"],
-    github: "https://github.com/toshankanwar/portfolio-f",
-    demo: "https://toshankanwar.website/",
-  },
+ 
   {
     title: "Credit card fraud detection",
     category: "ml",
@@ -180,15 +190,7 @@ export const projects = [
       "https://github.com/toshankanwar/Advanced-Credit-Card-Fraud-Detection-using-Time-Series-Analysis",
     demo: "https://github.com/toshankanwar/Advanced-Credit-Card-Fraud-Detection-using-Time-Series-Analysis",
   },
-  {
-    title: "Text Analyzer Tool",
-    category: "development",
-    description: "A basic to to analyze text.",
-    image: "text.jpg",
-    technologies: ["React.js", "Javascript"],
-    github: "https://github.com/toshankanwar/text-analyzer",
-    demo: "https://text.toshankanwar.website/",
-  },
+
 ];
 
 export const education = [
