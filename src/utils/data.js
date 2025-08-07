@@ -91,6 +91,16 @@ export const skills = [
 
 export const projects = [
   {
+    title: "Bakery Delivery APP (Android)",
+    category: "development",
+    description:
+      "Bakery Delivery App is a sleek, easy-to-use mobile app built with Expo and React Native, to delivered the bakery item and made for delivery boys. easy to use dark and light theme provided.",
+    image: "delivery/img2.jpg",
+    technologies: ["React Native","Expo dev", "UI/UX", "Node.js", "Google Firebase" ],
+    github: "https://github.com/toshankanwar/Delivery-Andoid-APP-React-Native-",
+    demo: "https://expo.dev/artifacts/eas/mNFN2SPdAawNsThv8mouVD.apk",
+  },
+  {
     title: "Bakery Ecommerce and Management",
     category: "development",
     description:
