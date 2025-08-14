@@ -5,7 +5,7 @@ export const personalInfo = {
   phone: "+91 *******493",
   location:
     "International Institute of Information Technology, Naya Raipur, C.G., India",
-  bio: "Versatile Full Stack Web Developer with a background in Data Science and AI and a strong foundation in Machine Learning and Prompt Engineering. Passionate about building efficient, scalable web applications and Dive into large data related problems.",
+  bio: "Versatile Full Stack Web Developer and APP Developer(React Native) with a background in Data Science and AI and a strong foundation in Machine Learning and Prompt Engineering. Passionate about building efficient, scalable web applications and Dive into large data related problems.",
 };
 
 export const socialLinks = [
@@ -51,13 +51,37 @@ export const skills = [
     ],
   },
   {
+    category: "APP Development",
+    items: [
+      
+      "React Native",
+      "Expo",
+      "Playstore Hosting",
+     
+    ],
+  },
+  {
+    category: "AI Tools",
+    items: [
+      
+      "Github Copilot",
+      "Perplexity",
+      "Chatgpt",
+      "Google Gemini",
+      
+    ],
+  },
+  {
     category: "Technical Skills",
     items: [
       "Full Stack Development",
+      "App Development",
       "DBMS",
       "Data Analysis",
       "Data Science",
-      "Machine Learning"
+      "Natural Language Processing",
+      "Machine Learning",
+      "Devops"
       
     ],
   },
