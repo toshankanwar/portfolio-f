@@ -1,0 +1,325 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to get user data
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data
+    }
+    
+    // Helper function to check if user is admin
+    function isAdmin() {
+      return getUserData().role == 'admin'
+    }
+    
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+   match /users/{userId} {
+  // READ: Self or Admin
+     
+
+ allow read: if
+        resource.data.role != 'admin'
+        || (request.auth != null && request.auth.uid == userId)
+        || (request.auth != null && isAdmin());
+
+  // CREATE: Only self, must be role 'user', and can only set allowed fields
+  allow create: if isAuthenticated()
+    && request.auth.uid == userId
+    && request.resource.data.role == 'user'
+    && request.resource.data.keys().hasOnly([
+      'email',
+      'displayName',
+      'role',
+      'createdAt'
+    ]);
+
+  // UPDATE: Admin can update anything, user can update their own doc but not role
+  allow update: if isAuthenticated() && (
+    isAdmin()
+    || (
+      request.auth.uid == userId
+      && !( // block role modifications by non-admins
+        'role' in request.resource.data
+        && request.resource.data.role != resource.data.role
+      )
+    )
+  );
+
+  // DELETE: Self or Admin
+  allow delete: if isAuthenticated() && (isAdmin() || request.auth.uid == userId);
+}
+
+    
+    // Bakery Items collection rules
+match /bakeryItems/{itemId} {
+  allow read: if true;
+
+  allow create: if isAuthenticated() && isAdmin() && isValidBakeryItem();
+  allow delete: if isAuthenticated() && isAdmin();
+
+  // Admins can update any field(s); users can update quantity only
+  allow update: if
+    (
+      isAuthenticated() && isAdmin()
+    )
+    ||
+    (
+    // changes made here change after firebase admin sdk Allow unauthenticated writes only to quantity field (NOT recommended!)
+    isAuthenticated()
+    && !isAdmin()
+    && request.resource.data.keys().hasOnly(['quantity'])
+    && request.resource.data.quantity is number
+    && request.resource.data.quantity >= 0
+    );
+
+  function isValidBakeryItem() {
+    let item = request.resource.data;
+    return item.keys().hasAll([
+      'name',
+      'description',
+      'price',
+      'category',
+      'imageUrl',
+      'inStock',
+      'isNew',
+      'quantity',
+      'createdAt',
+      'updatedAt'
+    ])
+    && item.name is string && item.name.size() > 0
+    && item.description is string
+    && item.price is number && item.price >= 0
+    && item.category is string
+    && item.imageUrl is string
+    && item.inStock is bool
+    && item.isNew is bool
+    && item.quantity is number && item.quantity >= 0
+    && item.createdAt is timestamp
+    && item.updatedAt is timestamp;
+  }
+
+  function isAuthenticated() {
+    return request.auth != null;
+  }
+  function getUserData() {
+    return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+  }
+  function isAdmin() {
+    return isAuthenticated() && getUserData().role == 'admin';
+  }
+}
+  // Cart Items collection rules
+match /carts/{userId}/items/{itemId} {
+  // Users can only read and write their own cart
+  allow read, write: if isAuthenticated() && request.auth.uid == userId;
+  
+  // Validate cart item data structure
+  function isValidCartItem() {
+    let item = request.resource.data;
+    return item.keys().hasAll([
+      'productId',
+      'quantity',
+      'addedAt',
+      'name',
+      'price',
+      'image',
+      'category'
+    ])
+    && item.productId is string
+    && item.name is string && item.name.size() > 0
+    && item.price is number && item.price > 0
+    && item.quantity is number && item.quantity > 0 && item.quantity <= 50
+    && item.addedAt is timestamp
+    && item.image is string
+    && item.category is string;
+  }
+  
+  function itemExists() {
+    return exists(/databases/$(database)/documents/products/$(request.resource.data.productId));
+  }
+  
+  // Create and update rules
+  allow create: if isAuthenticated() 
+    && request.auth.uid == userId 
+    && isValidCartItem()
+    && itemExists();
+    
+  allow update: if isAuthenticated() 
+    && request.auth.uid == userId 
+    && isValidCartItem()
+    && itemExists()
+    && request.resource.data.diff(resource.data).affectedKeys()
+        .hasOnly(['quantity', 'updatedAt']);
+        
+  // Delete rule
+  allow delete: if isAuthenticated() 
+    && request.auth.uid == userId;
+}
+    
+    // Orders collection rules
+   match /orders/{orderId} {
+
+  function isOrderOwner(userId) {
+    return request.auth.uid == userId;
+  }
+
+  // Helper function to validate order data
+  function isValidOrderData() {
+    let data = request.resource.data;
+    return
+      // Check required fields
+      data.userId is string &&
+      data.userEmail is string &&
+      data.items is list &&
+      data.address is map &&
+      data.paymentMethod in ['COD', 'UPI'] &&
+      data.paymentStatus in ['pending', 'completed', 'failed'] &&
+      data.orderStatus in ['pending', 'confirmed', 'processing', 'shipped', 'delivered', 'cancelled'] &&
+      data.subtotal is number &&
+      data.shipping is number &&
+      data.total is number &&
+      data.createdAt is string &&
+      data.updatedAt is string &&
+
+      // Delivery fields
+      data.deliveryType in ['today', 'choose'] &&
+      (
+        (data.deliveryType == 'today' && (!('deliveryDate' in data) || data.deliveryDate is string)) ||
+        (data.deliveryType == 'choose' && data.deliveryDate is string)
+      ) &&
+
+      // Validate address fields
+      data.address.name is string &&
+      data.address.mobile is string &&
+      data.address.email is string &&
+      data.address.state is string &&
+      data.address.city is string &&
+      data.address.address is string &&
+      data.address.pincode is string &&
+
+      // Validate mobile and pincode format
+      data.address.mobile.matches('^[0-9]{10}$') &&
+      data.address.pincode.matches('^[0-9]{6}$') &&
+
+      // Ensure user can only create orders for themselves
+      data.userId == request.auth.uid &&
+      data.userEmail == request.auth.token.email;
+  }
+
+  // Users can create orders, admins can update status
+  allow read: if isAuthenticated() &&
+                  (isOrderOwner(resource.data.userId) || isAdmin());
+  allow read: if request.auth != null &&
+                  request.auth.uid == resource.data.userId;
+  allow update: if request.auth != null || true;
+  // Allow create with validation
+  allow create: if isAuthenticated() &&
+                  isValidOrderData();
+
+  // Allow update for:
+  // 1. Users can update payment status of their own orders
+  // 2. Admins can update order status and payment status
+  allow update: if isAuthenticated() &&
+                  ((isOrderOwner(resource.data.userId) &&
+                    request.resource.data.diff(resource.data).affectedKeys()
+                      .hasOnly(['paymentStatus', 'updatedAt'])) ||
+                   (isAdmin() &&
+                    request.resource.data.diff(resource.data).affectedKeys()
+                      .hasOnly(['orderStatus', 'paymentStatus', 'updatedAt'])));
+
+  // No deletion allowed for orders
+  allow delete: if false;
+}
+
+    // Additional rule for cart items deletion after order
+    match /carts/{userId}/items/{itemId} {
+      allow delete: if isAuthenticated() && 
+                     request.auth.uid == userId;
+    }
+    
+    // Categories collection rules
+    match /categories/{categoryId} {
+      // Anyone can read categories
+      allow read: if true;
+      
+      // Only admins can modify categories
+      allow write: if isAuthenticated() && isAdmin();
+      
+      function isValidCategory() {
+        let category = request.resource.data;
+        return category.keys().hasAll([
+          'name',
+          'description',
+          'active',
+          'createdAt',
+          'updatedAt'
+        ])
+        && category.name is string && category.name.size() > 0
+        && category.description is string
+        && category.active is bool
+        && category.createdAt is timestamp
+        && category.updatedAt is timestamp;
+      }
+      
+      allow create, update: if isAuthenticated() 
+        && isAdmin() 
+        && isValidCategory();
+    }
+  match /favourites/{userId}/items/{itemId} {
+      // Only that user can read/write their favourites
+      allow read, write: if isAuthenticated() && request.auth.uid == userId;
+    }
+     match /addresses/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+   match /stored_predictions/{docId} {
+      allow read, create, write: if isAdmin();
+    }
+    // ✅ Allow sending OTP by server only (via Admin SDK → rules are bypassed anyway)
+    match /otps/{otpId} {
+      allow read, write: if request.auth != null && request.auth.token.admin == true;
+    }
+     // adminTokens collection rules
+    match /adminTokens/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+      // Newsletter Subscribers Collection Rules
+    match /newsletterSubscribers/{docId} {
+
+      // Allow anyone to create a document, but only if the data has exactly the expected fields
+      allow create: if
+        request.resource.data.keys().hasOnly(['email', 'createdAt'])
+        && request.resource.data.email is string
+        && request.resource.data.email.size() > 0
+        && request.resource.data.createdAt == request.time;
+
+      // Disallow reads to protect emails from being viewed publicly
+      allow read: if true;
+
+      // Disallow updates and deletes to protect subscriber data integrity
+      allow update, delete: if false;
+    }
+    
+
+     // Reviews collection rules
+    match /reviews/{reviewId} {
+      // Anyone (authenticated or not) can read reviews
+      allow read: if true;
+
+      // Only authenticated users can create reviews
+      allow create: if request.auth != null;
+
+      // Allow update and delete if:
+      // - The user is the author of the review
+      // - OR the user is an admin (role stored in users/{uid}.role == 'admin')
+      allow update, delete: if request.auth != null &&
+        (
+          request.auth.uid == resource.data.userId ||
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'
+        );
+    }
+  }
+}

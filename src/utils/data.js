@@ -44,7 +44,6 @@ export const skills = [
       "React.js",
       "Node.js",
       "Express.js",
-      
       "MongoDB",
       "Firebase",
       "SQL",
@@ -113,7 +112,7 @@ export const skills = [
   },
 ];
 
-export const projects = [
+export const projects = [   
   {
     title: "Bakery Delivery APP (Android)",
     category: "development",
@@ -144,6 +143,27 @@ export const projects = [
     github: "https://github.com/toshankanwar/Admin-Bakery-Management-and--Ecommerce",
     demo: "https://admin.bakery.toshankanwar.website/login",
   },
+  {
+    title: "ScriptPunk Terminal",
+    category: "development",
+    description:
+      "A cutting-edge terminal emulator built with React + TypeScript frontend and Go backend. Features 50+ interactive commands. ",
+    image: "Terminal.png",
+    technologies: ["React.js","Vite.js","Go","xterm.js" ],
+    github: "https://github.com/toshankanwar/Project-X",
+    demo: "https://terminal.toshankanwar.website",
+  },
+  {
+    title: "Stock Broking Groww",
+    category: "development",
+    description:
+      "Stock Broking is a modern mobile Stock Broking application that provides top gainers and losers insights. Built with React Native and Expo. ",
+    image: "Stock-Broking.png",
+    technologies: ["React Native","Expo dev"],
+    github: "https://github.com/toshankanwar/Stock-Etf-Broking-Groww",
+    demo: "https://toshankanwar.website/app/Stock-Broking.apk",
+  },
+
   {
     title: "PoemSite",
     category: "development",
