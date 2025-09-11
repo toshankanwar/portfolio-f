@@ -86,7 +86,7 @@ export const skills = [
   },
   {
     category: "Programming Languages",
-    items: ["C/C++ (for CP)", "Python (for ML)", "JavaScript"],
+    items: ["C/C++ (for CP)", "Python (for ML)", "JavaScript","Go"],
   },
   {
     category: "Editing Skills",
@@ -121,7 +121,7 @@ export const projects = [
     image: "delivery-app.jpg",
     technologies: ["React Native","Expo dev", "UI/UX", "Node.js", "Google Firebase" ],
     github: "https://github.com/toshankanwar/Delivery-Andoid-APP-React-Native-",
-    demo: "https://expo.dev/artifacts/eas/pxCHo9wcQeTSP2csNaPGgE.apk",
+    demo: "https://toshankanwar.website/app/bakery-delivery-app.apk",
   },
   {
     title: "Bakery Ecommerce and Management",
@@ -159,7 +159,7 @@ export const projects = [
     description:
       "Stock Broking is a modern mobile Stock Broking application that provides top gainers and losers insights. Built with React Native and Expo. ",
     image: "Stock-Broking.png",
-    technologies: ["React Native","Expo dev"],
+    technologies: ["React Native","App development","Expo dev"],
     github: "https://github.com/toshankanwar/Stock-Etf-Broking-Groww",
     demo: "https://toshankanwar.website/app/Stock-Broking.apk",
   },
@@ -193,7 +193,7 @@ export const projects = [
       "Developed a heart failure prediction web app using deep learning and flask as a backend. It gives the percentage of risk of heart failure",
     image: "heart.png",
     technologies: ["React.js", "Tailwind CSS", "Python Flask", "Google Firebase"],
-    github: "https://github.com/toshankanwar/Heart-Failure-Prediction",
+    github: "https://github.com/toshankanwar/Heart-failure-Prediction-final",
     demo: "https://heart-failure.toshankanwar.website",
   },
   {
