@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Toshan kanwar",
-  title: "Full Stack Web Developer | ML and AI Enthusiam | Data Engineer ",
+  title: "Full Stack Web Developer | ML and AI Enthusiam | App Developer ",
   email: "contact@toshankanwar.website",
   phone: "+91 *******493",
   location:
@@ -152,6 +152,16 @@ export const projects = [
     technologies: ["React.js","Vite.js","Go","xterm.js" ],
     github: "https://github.com/toshankanwar/Project-X",
     demo: "https://terminal.toshankanwar.website",
+  },
+  {
+    title: "SecureLink",
+    category: "development",
+    description:
+      "A real-time chat application built with React Native, Expo, and Firebase featuring WhatsApp-like messaging experience with offline support. ",
+    image: "securelink.png",
+    technologies: ["React Native","App development","Expo dev","Google Firebase","Node.js"],
+    github: "https://github.com/toshankanwar/SecureLink-V2",
+    demo: "https://toshankanwar.website/app/SecureLink.apk",
   },
   {
     title: "Stock Broking Groww",
