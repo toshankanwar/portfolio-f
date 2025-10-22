@@ -154,16 +154,6 @@ export const projects = [
     demo: "https://resumeranker.toshankanwar.website",
   },
   {
-    title: "Study Remainder",
-    category: "development",
-    description:
-      "A comprehensive full-stack web application that helps students manage their study schedules and receive automated email reminders to stay on track with their learning goals.",
-    image: "study-remainder.png",
-    technologies: ["Next.js", "Node.js", "Tailwind CSS", "MongoDB","Nodemailer"],
-    github: "https://github.com/toshankanwar/Study-Remainder",
-    demo: "https://study-remainder.toshankanwar.website",
-  },
-  {
     title: "ScriptPunk Terminal",
     category: "development",
     description:
