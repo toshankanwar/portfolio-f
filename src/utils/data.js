@@ -121,7 +121,7 @@ export const projects = [
     image: "delivery-app.jpg",
     technologies: ["React Native","Expo dev", "UI/UX", "Node.js", "Google Firebase" ],
     github: "https://github.com/toshankanwar/Delivery-Andoid-APP-React-Native-",
-    demo: "https://toshankanwar.website/app/bakery-delivery-app.apk",
+    demo: "https://github.com/toshankanwar/cdn-toshan/blob/main/apk/bakery-delivery-app.apk",
   },
   {
     title: "Bakery Ecommerce and Management",
@@ -171,7 +171,7 @@ export const projects = [
     image: "securelink.png",
     technologies: ["React Native","App development","Expo dev","Google Firebase","Node.js"],
     github: "https://github.com/toshankanwar/SecureLink-V2",
-    demo: "https://toshankanwar.website/app/SecureLink.apk",
+    demo: "https://github.com/toshankanwar/cdn-toshan/blob/main/apk/SecureLink.apk",
   },
   {
     title: "Stock Broking Groww",
@@ -181,7 +181,7 @@ export const projects = [
     image: "Stock-Broking.png",
     technologies: ["React Native","App development","Expo dev"],
     github: "https://github.com/toshankanwar/Stock-Etf-Broking-Groww",
-    demo: "https://toshankanwar.website/app/Stock-Broking.apk",
+    demo: "https://github.com/toshankanwar/cdn-toshan/blob/main/apk/Stock-Broking.apk",
   },
 
   {
