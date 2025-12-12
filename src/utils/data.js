@@ -1,8 +1,8 @@
 export const personalInfo = {
   name: "Toshan kanwar",
   title: "Full Stack Web Developer | ML and AI Enthusiam | App Developer ",
-  email: "contact@toshankanwar.website",
-  phone: "+91 *******493",
+  email: "contact@toshankanwar.in",
+  phone: "+91 *********3",
   location:
     "International Institute of Information Technology, Naya Raipur, C.G., India",
   bio: "Versatile Full Stack Web Developer and APP Developer(React Native) with a background in Data Science and AI and a strong foundation in Machine Learning and Prompt Engineering. Passionate about building efficient, scalable web applications and Dive into large data related problems.",
@@ -131,7 +131,7 @@ export const projects = [
     image: "bakery.png",
     technologies: ["Next.js", "Google Firebase", "Tailwind CSS", "DBMS", "Data Analysis", "UI/UX" ],
     github: "https://github.com/toshankanwar/bakery-management-and-ecommerce",
-    demo: "https://bakery.toshankanwar.website/",
+    demo: "https://bakery.toshankanwar.in/",
   },
   {
     title: "Bakery Admin Dashboard",
@@ -141,7 +141,7 @@ export const projects = [
     image: "bakery-dashboard.png",
     technologies: ["Next.js", "Google Firebase", "Tailwind CSS", "Data Analysis"],
     github: "https://github.com/toshankanwar/Admin-Bakery-Management-and--Ecommerce",
-    demo: "https://admin.bakery.toshankanwar.website/login",
+    demo: "https://admin.bakery.toshankanwar.in/login",
   },
   {
     title: "Resume Ranking System",
@@ -151,7 +151,7 @@ export const projects = [
     image: "resume-ranker.png",
     technologies: ["Next.js", "Python Flask", "Tailwind CSS", "ML and NlP"],
     github: "https://github.com/toshankanwar/Resume-Ranking-System",
-    demo: "https://resumeranker.toshankanwar.website",
+    demo: "https://resume.toshankanwar.in",
   },
   {
     title: "ScriptPunk Terminal",
@@ -161,7 +161,7 @@ export const projects = [
     image: "Terminal.png",
     technologies: ["React.js","Vite.js","Go","xterm.js" ],
     github: "https://github.com/toshankanwar/Project-X",
-    demo: "https://terminal.toshankanwar.website",
+    demo: "https://terminal.toshankanwar.in",
   },
   {
     title: "SecureLink",
@@ -192,7 +192,7 @@ export const projects = [
     image: "poemsite.png",
     technologies: ["Next.js","Node.js","Nodemailer"," Google Firebase", "Tailwind CSS", "Zoho mail service" ],
     github: "https://github.com/toshankanwar/poetry-website",
-    demo: "https://poems.toshankanwar.website",
+    demo: "https://poems.toshankanwar.in",
   },
   {
     title: "PoemSite Admin Dashboard",
@@ -202,7 +202,7 @@ export const projects = [
     image: "poemsite-admin.png",
     technologies: ["Next.js","Node.js","Nodemailer"," Google Firebase", "Tailwind CSS" ],
     github: "https://github.com/toshankanwar/admin-poetry-website",
-    demo: "https://admin.poems.toshankanwar.website",
+    demo: "https://admin.poems.toshankanwar.in",
   },
 
   
@@ -214,7 +214,7 @@ export const projects = [
     image: "heart.png",
     technologies: ["React.js", "Tailwind CSS", "Python Flask", "Google Firebase"],
     github: "https://github.com/toshankanwar/Heart-failure-Prediction-final",
-    demo: "https://heart-failure.toshankanwar.website",
+    demo: "https://heart.toshankanwar.in",
   },
   {
     title: "Text Analyzer Tool",
@@ -223,7 +223,7 @@ export const projects = [
     image: "text.png",
     technologies: ["React.js", "Vite.js", "pdfjs-dist","mammoth"],
     github: "https://github.com/toshankanwar/Advance-Text-Analyzer",
-    demo: "https://text-analyzer.toshankanwar.website/",
+    demo: "https://text.toshankanwar.in/",
   },
   {
     title: "Personal Portfolio",
@@ -232,7 +232,7 @@ export const projects = [
     image: "portfolio.png",
     technologies: ["React.js", "Vite.js", "JavaScript"],
     github: "https://github.com/toshankanwar/portfolio-f",
-    demo: "https://toshankanwar.website/",
+    demo: "https://toshankanwar.in/",
   },
   {
     title: "Crypto Predict",
@@ -242,7 +242,7 @@ export const projects = [
     image: "crypto.png",
     technologies: ["React.js", "Python Flask", "CSS3"],
     github: "https://github.com/toshankanwar/Stock-Market-Prediction-Web-App",
-    demo: "https://stock-market-prediction.toshankanwar.website/",
+    demo: "https://stock-market-prediction-web-app.vercel.app/",
   },
   {
     title: "AQI Prediction",
@@ -251,7 +251,7 @@ export const projects = [
     image: "aqi.png",
     technologies: ["React.js","Python Flask", "CSS3"],
     github: "https://github.com/toshankanwar/AQI-Prediction",
-    demo: "https://aqi.toshankanwar.website/",
+    demo: "https://aqi.toshankanwar.in/",
   },
  
   {
