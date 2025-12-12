@@ -15,7 +15,7 @@ Key features include:
 - Built with React and Vite for fast development and optimized performance.
 - Simple but elegant UI powered by Tailwind CSS utility-first framework.
 - Demonstrates best practices in component-based architecture and state management.
-- Hosted live at [https://toshankanwar.website/](https://toshankanwar.website/).
+- Hosted live at [https://toshankanwar.in/](https://toshankanwar.in/).
 
 ---
 
@@ -86,7 +86,7 @@ To run this project locally:
 ## Deployment
 
 The live portfolio website is hosted and continuously deployed at:  
-[https://toshankanwar.website](https://toshankanwar.website)
+[https://toshankanwar.in](https://toshankanwar.in)
 
 ---
 
@@ -98,9 +98,9 @@ Contributions are welcome! Feel free to fork the repository, fix issues, or add 
 
 ## Contact
 
-- Website: [https://toshankanwar.website](https://toshankanwar.website)  
+- Website: [https://toshankanwar.in](https://toshankanwar.in)  
 - GitHub: [https://github.com/toshankanwar](https://github.com/toshankanwar)  
-- Email: contact@toshankanwar.website  <!-- Replace with your email -->
+- Email: contact@toshankanwar.in  <!-- Replace with your email -->
 
 ---
 
