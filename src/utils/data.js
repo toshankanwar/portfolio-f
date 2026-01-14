@@ -144,6 +144,16 @@ export const projects = [
     demo: "https://admin.bakery.toshankanwar.in/login",
   },
   {
+    title: "Toshan Music",
+    category: "development",
+    description:
+      "Developed a Personal Music listening platform to share and play personal music.",
+    image: "music-app.jpg",
+    technologies: ["Next.js", "Tailwind CSS", "jsdelivr cdn"],
+    github: "https://github.com/toshankanwar/Toshan-Music",
+    demo: "https://music.toshankanwar.in",
+  },
+  {
     title: "Resume Ranking System",
     category: "ml",
     description:
