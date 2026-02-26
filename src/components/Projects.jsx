@@ -3,44 +3,53 @@ import { projects } from '../utils/data';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
-  
-  const filteredProjects = filter === 'all' 
-    ? projects 
+
+  const filteredProjects = filter === 'all'
+    ? projects
     : projects.filter(project => project.category === filter);
-  
+
   return (
     <section id="projects" className="projects">
       <div className="container">
         <div className="section-title">
           <h2>My Projects</h2>
         </div>
-        
+
         <div className="filter-buttons">
-          <button 
+          <button
             className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
             onClick={() => setFilter('all')}
           >
             All
           </button>
-          <button 
+          <button
             className={`filter-btn ${filter === 'development' ? 'active' : ''}`}
             onClick={() => setFilter('development')}
           >
             Development
           </button>
-          <button 
+          <button
             className={`filter-btn ${filter === 'ml' ? 'active' : ''}`}
             onClick={() => setFilter('ml')}
           >
             ML
           </button>
         </div>
-        
+
         <div className="projects-grid">
           {filteredProjects.map((project, index) => (
             <div key={index} className="project-card">
               <div className="project-img">
-                <img src={`/${project.image}`} alt={project.title} />
+                {/* ✅ Fixed: use project.image directly (CDN full URL) */}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  crossOrigin="anonymous"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = 'https://placehold.co/400x200?text=No+Image';
+                  }}
+                />
                 <div className="overlay">
                   <div className="project-links">
                     <a href={project.github} target="_blank" rel="noopener noreferrer" title="GitHub">
@@ -65,19 +74,19 @@ const Projects = () => {
           ))}
         </div>
       </div>
-      
-      <style jsx>{`
+
+      <style>{`
         .projects {
           background-color: #f9fafb;
         }
-        
+
         .filter-buttons {
           display: flex;
           justify-content: center;
           gap: 1rem;
           margin-bottom: 2rem;
         }
-        
+
         .filter-btn {
           background: none;
           border: none;
@@ -88,22 +97,22 @@ const Projects = () => {
           transition: all 0.3s ease;
           color: var(--gray);
         }
-        
+
         .filter-btn:hover {
           color: var(--primary);
         }
-        
+
         .filter-btn.active {
           background-color: var(--primary);
           color: white;
         }
-        
+
         .projects-grid {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
           gap: 2rem;
         }
-        
+
         .project-card {
           background-color: white;
           border-radius: 8px;
@@ -111,29 +120,29 @@ const Projects = () => {
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           transition: all 0.3s ease;
         }
-        
+
         .project-card:hover {
           transform: translateY(-10px);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        
+
         .project-img {
           position: relative;
           overflow: hidden;
           height: 200px;
         }
-        
+
         .project-img img {
           width: 100%;
           height: 100%;
           object-fit: cover;
           transition: transform 0.5s ease;
         }
-        
+
         .project-card:hover .project-img img {
           transform: scale(1.1);
         }
-        
+
         .overlay {
           position: absolute;
           top: 0;
@@ -147,16 +156,16 @@ const Projects = () => {
           opacity: 0;
           transition: opacity 0.3s ease;
         }
-        
+
         .project-card:hover .overlay {
           opacity: 1;
         }
-        
+
         .project-links {
           display: flex;
           gap: 1rem;
         }
-        
+
         .project-links a {
           display: flex;
           justify-content: center;
@@ -169,32 +178,33 @@ const Projects = () => {
           font-size: 1.2rem;
           transition: all 0.3s ease;
         }
-        
+
         .project-links a:hover {
           background-color: var(--primary);
           color: white;
           transform: translateY(-5px);
         }
-        
+
         .project-info {
           padding: 1.5rem;
         }
+
         .project-info h3 {
           margin-bottom: 0.5rem;
           color: var(--dark);
         }
-        
+
         .project-info p {
           color: var(--gray);
           margin-bottom: 1rem;
         }
-        
+
         .tech-stack {
           display: flex;
           flex-wrap: wrap;
           gap: 0.5rem;
         }
-        
+
         .tech-tag {
           display: inline-block;
           padding: 0.2rem 0.5rem;
@@ -203,12 +213,12 @@ const Projects = () => {
           font-size: 0.8rem;
           color: var(--gray);
         }
-        
+
         @media screen and (max-width: 768px) {
           .projects-grid {
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
           }
-          
+
           .filter-buttons {
             flex-wrap: wrap;
           }
