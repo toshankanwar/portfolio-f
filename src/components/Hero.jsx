@@ -49,7 +49,7 @@ const Hero = () => {
 
                 <div className="hero-image">
                     <div className="image-container">
-                        <img src="/image-toshan.jpg" alt={personalInfo.name} />
+                        <img src="https://static-assets.toshankanwar.in/images/image-toshan.jpg" alt={personalInfo.name} />
                     </div>
                 </div>
             </div>
