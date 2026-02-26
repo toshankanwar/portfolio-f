@@ -1,6 +1,6 @@
 # Toshan Kanwar Portfolio Website
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Ftoshankanwar.website)](https://toshankanwar.website/)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Ftoshankanwar.in)](https://toshankanwar.in/)
 [![GitHub Repo stars](https://img.shields.io/github/stars/toshankanwar/portfolio-f?style=social)](https://github.com/toshankanwar/portfolio-f/stargazers)
 
 Welcome to my personal portfolio website repository built with React, Vite, and modern web technologies!
