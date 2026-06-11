@@ -164,6 +164,17 @@ export const projects = [
     demo: "https://resume.toshankanwar.in",
   },
   {
+    title: "Autograde",
+    category: "ml",
+    description:
+      "Developed an Automatic answer evaluation system using ocr and semantic scoring ",
+    image: "https://static-assets.toshankanwar.in/images/autograde.png",
+    technologies: ["Next.js", "Python Fastapi", "Tailwind CSS", "ML and NlP","Uvicorn"],
+    github: "https://github.com/toshankanwar/Frontend-automatic-marks-evaluator",
+    demo: "https://autograde.toshankanwar.in",
+  },
+
+  {
     title: "Indian Market Bubbles",
     category: "development",
     description:
