@@ -121,7 +121,7 @@ export const projects = [
     image: "https://static-assets.toshankanwar.in/images/delivery-app.jpg",
     technologies: ["React Native","Expo dev", "UI/UX", "Node.js", "Google Firebase" ],
     github: "https://github.com/toshankanwar/Delivery-Andoid-APP-React-Native-",
-    demo: "https://github.com/toshankanwar/cdn-toshan/blob/main/apk/bakery-delivery-app.apk",
+    demo: "https://link.toshankanwar.in/Bakery-Delivery-App-V1.3.0",
   },
   {
     title: "Bakery Ecommerce and Management",
